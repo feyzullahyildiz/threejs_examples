@@ -5,6 +5,9 @@ module.exports = {
     entry: {
         camera_move: './src/camera_move.js',
         colorful_triangle: './src/colorful_triangle.js',
+        face_check: './src/face_check.js',
+        THREE: './src/THREE.js',
+        snowman: './src/snowman.js',
     },
     output: {
         filename: '[name].bundle.js',

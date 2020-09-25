@@ -29,14 +29,14 @@ cam.position.z = 2
 
 let oldMesh = null;
 let index = 0;
-setInterval(() => {
-    const rad = getRadyan(index)
-    drawTriangle(Math.cos(rad), Math.sin(rad), 0)
-    index += 1;
-    if (index > 360) {
-        index = 0;
-    }
-}, 62)
+// setInterval(() => {
+//     const rad = getRadyan(index)
+//     drawTriangle(Math.cos(rad), Math.sin(rad), 0)
+//     index += 1;
+//     if (index > 360) {
+//         index = 0;
+//     }
+// }, 62)
 
 drawTriangle(1, 0, 0)
 
@@ -47,14 +47,18 @@ function drawTriangle(x, y, z) {
     }
     const geom = new Geometry()
     geom.vertices.push(new Vector3(x, y, z));
-    geom.vertices.push(new Vector3(0, -1, 0));
-    geom.vertices.push(new Vector3(0, 0, 1));
+    geom.vertices.push(new Vector3(0, 1, 0));
+    geom.vertices.push(new Vector3(-1, 0, 0));
     geom.faces.push(new Face3(0, 1, 2))
 
 
     const c1 = new Color(0xff0000)
     const c2 = new Color(0x00ff00)
     const c3 = new Color(0x0000ff)
+    console.log('c3.getHSL()', c3.getHSL())
+    // c3.setHSL(.11, .93, .55)
+    // c3.setHSL(.5, .5, .5)
+    // c3.setHSL(1, 1, .5)
     geom.faces[0].vertexColors = [c1, c2, c3]
     // const material = new MeshNormalMaterial();
     const material = new MeshBasicMaterial({ vertexColors: VertexColors, side: DoubleSide });

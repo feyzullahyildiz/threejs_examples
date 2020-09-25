@@ -1,0 +1,43 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>camera_move</title>
+</head>
+<style>
+    html, body {
+        margin: 0;
+        height: 100vh;
+    }
+    .input-list {
+        min-width: 190px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        background-color: white;
+        padding: 8px;
+    }
+</style>
+<body>
+    <div class="input-list">
+        <h4>Camera Position</h4>
+        <div> x: <input type="range" id="input-range-x" min="-1" max="1" step="0.02"></div>
+        <div> y: <input type="range" id="input-range-y" min="-1" max="1" step="0.02"></div>
+        <div> z: <input type="range" id="input-range-z" min="-1" max="3" value="2" step="0.02"></div>
+        <h4>Camera Rotation</h4>
+        <div>
+            rx: <input type="range" id="input-range-rx" value="0" min="0" max="360" step="1">
+            <span id="value-input-range-rx"></span>
+        </div>
+        <div>
+            ry: <input type="range" id="input-range-ry" value="0" min="0" max="360" step="1">
+            <span id="value-input-range-ry"></span>
+        </div>
+        <div>
+            rz: <input type="range" id="input-range-rz" value="0" min="0" max="360" step="1">
+            <span id="value-input-range-rz"></span>
+        </div>
+    </div>
+    <script src="./js/face_check.bundle.js"></script>
+</body>
+</html>
